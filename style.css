@@ -764,3 +764,16 @@ body.fade-out {
 .link-proj{
     text-align: center;
 }
+
+#RESUME {
+    display: block;
+    width: fit-content;
+    margin: 2px auto 0; /* centers the block horizontally */
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+    /* nudge slightly to the left */
+    transform: translateX(-22px);
+}

@@ -4,50 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Sharma</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #191919;
+            color: white;
+            font-family: monospace;
+        }
+
+        #RESUME {
+            color: white;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        #RESUME:hover {
+            color: #999;
+            letter-spacing: 2px;
+        }
+
+        #social-icons {
+            margin-top: 40px;
+        }
+
+        #social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 22px;
+            transition: 0.2s ease;
+        }
+
+        #social-icons a:hover {
+            color: #999;
+        }
+
+        .blinker {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
-<body style="background: #191919;">
+<body>
+
     <br><br><br><br>
+
     <div id="box">
-        <h2 id="intro">Dev Sharma<span class="blinker">|</span></h2>
+
+        <h2 id="intro">
+            Dev Sharma<span class="blinker">|</span>
+        </h2>
+
         <p id="BIO">sophomore at MIT, Manipal</p>
         <p id="BIO">[working at thrustMIT]</p>
+
         <br><br>
+
         <div id="links">
-            <a href="about.html" id="ABOUT">about</a><br><br>
-            <a href="skills.html" id="SKILLS">skills</a><br><br>
-            <a href="projects.html" id="PROJECTS">projects</a><br><br>
+
+            <a href="about.html" id="ABOUT">about</a>
+            <br><br>
+
+            <a href="skills.html" id="SKILLS">skills</a>
+            <br><br>
+
+            <a href="projects.html" id="PROJECTS">projects</a>
+            <br><br>
+
+            <!-- RESUME BUTTON -->
+            <a
+                href="https://drive.google.com/uc?export=download&id=1flz1d0toz3cl0A1pU2nzWZeecukF3xwH"
+                id="RESUME"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fas fa-file-arrow-down"></i> resume
+            </a>
+
         </div>
     </div>
 
     <div id="social-icons">
-            <a href="https://github.com/DevSharma1903" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/dev-sharma-092447316/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://geniusapple.itch.io/" target="_blank" rel="noopener noreferrer" title="Itch.io">
-                <i class="fab fa-itch-io"></i>
-            </a>
-            <a href="https://discord.com/users/751676240850583574" target="_blank" rel="noopener noreferrer" title="Discord">
-                <i class="fab fa-discord"></i>
-            </a>
-            <a href="mailto:devsharma.techinnovate@gmail.com" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.youtube.com/@geniusapple6471" target="_blank" rel="noopener noreferrer" title="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
-        <br><br>
-        <div id="ending">
-            <p>dev sharma 2025</p>
-            <p>all rights reserved</p>
-        </div>
+
+        <a href="https://github.com/DevSharma1903"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="GitHub">
+
+            <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/dev-sharma-092447316/"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="LinkedIn">
+
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://geniusapple.itch.io/"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="Itch.io">
+
+            <i class="fab fa-itch-io"></i>
+        </a>
+
+        <a href="https://discord.com/users/751676240850583574"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="Discord">
+
+            <i class="fab fa-discord"></i>
+        </a>
+
+        <a href="mailto:devsharma.techinnovate@gmail.com"
+           title="Email">
+
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@geniusapple6471"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="YouTube">
+
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+
+    <br><br>
+
+    <div id="ending">
+        <p>dev sharma 2025</p>
+        <p>all rights reserved</p>
+    </div>
 
     <script src="index.js"></script>
+
 </body>
 </html>
