@@ -6,8 +6,29 @@
   --accent-hover: #527ad0;
   --card-bg: #222222;
   --border-color: #333333;
+  --btn-bg: #3f3f3f;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --bg-text-color: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='light'] {
+  /* White, pale green, pale pink palette */
+  --bg-color: #fdfdfd;
+  /* White */
+  --text-color: #2c3e35;
+  /* Dark greenish gray for readable text */
+  --text-secondary: #4a5c52;
+  --accent-color: #ffb6c1;
+  /* Pale pink */
+  --accent-hover: #ff9fb0;
+  --card-bg: #e8f5e9;
+  /* Pale green */
+  --border-color: #c8e6c9;
+  --btn-bg: #ffffff;
+
+  --bg-text-color: rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -23,6 +44,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
 a {
@@ -30,12 +53,50 @@ a {
   color: inherit;
 }
 
+/* Cozy Background Text */
+.bg-text-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  filter: blur(3px);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-text {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--bg-text-color);
+  white-space: pre;
+  line-height: 1.8;
+  animation: scrollText 120s linear infinite;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
 /* Animations */
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -43,12 +104,20 @@ a {
 }
 
 .page-transition {
-  animation: slideIn 0.4s ease-out forwards;
+  animation: slideIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .blinker {
@@ -67,8 +136,16 @@ a {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   padding: 40px;
-  border-radius: 8px; /* Solid styling, no glassmorphism */
+  border-radius: 12px;
+  /* Slightly softer corners for cozy vibe */
   margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.box-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Headings */
@@ -84,23 +161,51 @@ a {
   font-size: 1.1em;
   color: var(--text-secondary);
   margin-bottom: 15px;
+  transition: color 0.4s ease;
 }
 
 /* Buttons and Links */
 .btn-primary {
-  padding: 8px 32px;
+  padding: 10px 32px;
   font-size: 1.1em;
   color: var(--text-color);
-  background-color: #3f3f3f;
-  border-radius: 4px;
+  background-color: var(--btn-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  /* softer */
   cursor: pointer;
-  border: none;
   display: inline-block;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s, color 0.4s;
   text-align: center;
 }
 
 .btn-primary:hover {
   background-color: var(--accent-color);
-  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  color: #191919;
+  transform: translateY(-3px);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+  background: var(--accent-color);
+  color: #191919;
 }
