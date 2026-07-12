@@ -1,0 +1,106 @@
+:root {
+  --bg-color: #191919;
+  --text-color: #ffffff;
+  --text-secondary: rgba(240, 248, 255, 0.7);
+  --accent-color: #395faa;
+  --accent-hover: #527ad0;
+  --card-bg: #222222;
+  --border-color: #333333;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blinker {
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+/* Shared Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.box-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  border-radius: 8px; /* Solid styling, no glassmorphism */
+  margin: 0 auto;
+}
+
+/* Headings */
+.page-title {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* Typography */
+.text-body {
+  font-size: 1.1em;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+/* Buttons and Links */
+.btn-primary {
+  padding: 8px 32px;
+  font-size: 1.1em;
+  color: var(--text-color);
+  background-color: #3f3f3f;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  transition: background-color 0.2s, transform 0.2s;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
