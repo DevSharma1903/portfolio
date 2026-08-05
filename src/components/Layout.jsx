@@ -81,9 +81,6 @@ function initCozyVibe() {
           <a href="mailto:devsharma.techinnovate@gmail.com" title="Email" className="social-link">
             <i className="fas fa-envelope fa-lg"></i>
           </a>
-          <a href="https://www.youtube.com/@geniusapple6471" target="_blank" rel="noopener noreferrer" title="YouTube" className="social-link">
-            <i className="fab fa-youtube fa-lg"></i>
-          </a>
         </div>
         
         <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>

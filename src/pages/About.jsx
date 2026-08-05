@@ -17,10 +17,6 @@ const About = () => {
           </p>
 
           <p className="text-body">
-            I also run a YouTube channel, that you can find <a href="https://www.youtube.com/@geniusapple6471" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'underline' }}>here</a>.
-          </p>
-
-          <p className="text-body">
             When I'm in the mood, I love living in the world of 3D Modelling in Blender and Game Development in Unity.
           </p>
         </div>
