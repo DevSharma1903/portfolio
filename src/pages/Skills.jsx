@@ -26,7 +26,7 @@ const Skills = () => {
         
         {/* Skills Column */}
         <div className="box-container" style={{ margin: 0, height: '100%' }}>
-          <h2 className="page-title">skills<span className="blinker">_</span></h2>
+          <h2 className="page-title">skills<span className="blinker"></span></h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
             {skillCategories.map((cat, idx) => (
@@ -42,21 +42,21 @@ const Skills = () => {
 
         {/* Certifications Column */}
         <div className="box-container" style={{ margin: 0, height: '100%' }}>
-          <h2 className="page-title">certifications<span className="blinker">_</span></h2>
+          <h2 className="page-title">certifications<span className="blinker"></span></h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {certifications.map((cert, idx) => (
               <div key={idx} style={{ 
-                backgroundColor: 'rgba(255, 255, 255, 0.02)', 
+                backgroundColor: 'var(--tag-bg)', 
                 border: '1px solid var(--border-color)', 
-                padding: '20px', 
-                borderRadius: '8px' 
+                padding: '18px', 
+                borderRadius: 'var(--radius-md)' 
               }}>
-                <h3 style={{ fontSize: '1.1em', marginBottom: '5px' }}>{cert.title}</h3>
-                <p style={{ color: 'var(--accent-color)', fontSize: '0.9em', marginBottom: '10px' }}>{cert.org}</p>
-                <p className="text-body" style={{ fontSize: '0.85em', margin: '2px 0' }}>Issued: {cert.date}</p>
-                <p className="text-body" style={{ fontSize: '0.85em', margin: '2px 0', marginBottom: '15px' }}>ID: {cert.id}</p>
-                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '6px 16px', fontSize: '0.9em' }}>
+                <h3 style={{ fontSize: '1.05em', marginBottom: '4px' }}>{cert.title}</h3>
+                <p style={{ color: 'var(--accent-color)', fontSize: '0.88em', marginBottom: '10px' }}>{cert.org}</p>
+                <p className="text-body" style={{ fontSize: '0.84em', margin: '2px 0' }}>Issued: {cert.date}</p>
+                <p className="text-body" style={{ fontSize: '0.84em', margin: '2px 0', marginBottom: '14px' }}>ID: {cert.id}</p>
+                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '5px 14px', fontSize: '0.85em' }}>
                   Show Credential
                 </a>
               </div>

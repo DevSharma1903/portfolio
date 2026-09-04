@@ -12,7 +12,7 @@ const Home = () => {
     }}>
       <div className="box-container" style={{ maxWidth: '400px', width: '100%' }}>
         <h2 className="page-title" style={{ marginBottom: '20px' }}>
-          Dev Sharma<span className="blinker">|</span>
+          Dev Sharma<span className="blinker"></span>
         </h2>
         
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
