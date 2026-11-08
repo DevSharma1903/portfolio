@@ -1,0 +1,107 @@
+.espresso-figure.iso {
+  --anatomy-page: #0B0D0D;
+  --anatomy-card: #121615;
+  --anatomy-paper: #141918;
+  --anatomy-face: #202723;
+  --anatomy-top: #313a35;
+  --anatomy-shade-0: #141a17;
+  --anatomy-shade-1: #1a211d;
+  --anatomy-shade-2: #222a25;
+  --anatomy-shade-3: #29332d;
+  --anatomy-lit-top: #41483f;
+  --anatomy-lit-shade: #323b34;
+  --anatomy-hi: #DEDCD4;
+  --anatomy-mid: #989C93;
+  --anatomy-lo: #626B63;
+  --anatomy-faint: #424A43;
+  --anatomy-lit: #D58B5D;
+  --anatomy-dot: #C9C3B3;
+  --anatomy-halo: #070908;
+  --anatomy-red: #D58B5D;
+  --anatomy-green: #A8B596;
+  --anatomy-blue: #8B9DA0;
+  width: 100%;
+  margin: 0;
+}
+
+.espresso-plate {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 16px 18px 12px;
+  border: 1px solid #303a34;
+  border-radius: 6px;
+  background: #121615;
+}
+
+.espresso-plate-top, .espresso-art, .espresso-plate-bottom { position: relative; z-index: 1; }
+
+.espresso-plate-top,
+.espresso-plate-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #969d95;
+  font: 10px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .06em;
+}
+
+.espresso-plate-top span:first-child { color: #D58B5D; }
+.espresso-art { margin: -2px -9px -7px; }
+.espresso-art .iso-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.espresso-plate-bottom { min-height: 38px; }
+.espresso-readout { display: inline-flex; align-items: center; gap: 10px; }
+.espresso-status { color: #D9D9D1; font: 500 12px/1.2 Switzer, sans-serif; letter-spacing: .01em; }
+.espresso-status::before { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: #737A72; content: ""; vertical-align: 1px; transition: background .24s ease; }
+.espresso-figure[data-brewing="true"] .espresso-status::before { background: #D58B5D; }
+.espresso-brew-button { min-height: 34px; display: inline-flex; align-items: center; gap: 10px; padding: 0 12px; border: 1px solid #D58B5D; border-radius: 3px; background: #D58B5D; color: #111412; cursor: pointer; font: 600 11px/1 Switzer, sans-serif; letter-spacing: .01em; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.espresso-brew-button:hover { background: transparent; color: #E7E4DC; }
+.espresso-brew-button:focus-visible { outline: 2px solid #E7E4DC; outline-offset: 3px; }
+.espresso-brew-button svg { display: block; transition: transform .22s var(--ease); }
+.espresso-brew-button:hover svg { transform: translate(2px, -2px); }
+.espresso-figure figcaption { padding: 9px 2px 0; color: #90978E; font-size: 11px; line-height: 1.4; }
+
+.espresso-vent { fill: #111613; stroke: #59645B; stroke-width: .45; }
+.espresso-water-window { fill: #161D18; stroke: #91968C; stroke-width: .65; }
+.espresso-water-level { fill: #82907D; opacity: .55; }
+.espresso-cup-well { fill: #171B17; stroke: #D7D4C9; stroke-width: .85; }
+.espresso-coffee-surface { fill: #8B634B; stroke: #BB8D6B; stroke-width: .7; opacity: 0; transition: opacity .7s ease; }
+.espresso-crema-ring { fill: none; stroke: #D3A17A; stroke-width: .85; opacity: 0; transition: opacity .9s ease; }
+.espresso-figure[data-coffee="true"] .espresso-coffee-surface { opacity: .88; }
+.espresso-figure[data-coffee="true"] .espresso-crema-ring { opacity: .7; }
+.espresso-cup-handle { fill: none; stroke: #D8D4C9; stroke-width: 6; stroke-linecap: round; }
+.espresso-cup-handle-inner { fill: none; stroke: #4B514B; stroke-width: 1.8; }
+.espresso-stream { fill: none; stroke: #C28C62; stroke-width: 2.4; stroke-linecap: round; opacity: 0; transition: opacity .4s ease; }
+.espresso-droplet { fill: #D58B5D; opacity: 0; transition: opacity .25s ease; }
+.espresso-figure[data-flowing="true"] .espresso-stream { opacity: .92; }
+.espresso-figure[data-flowing="true"] .espresso-droplet { opacity: .85; }
+.espresso-vapor { fill: none; stroke: #B0B6AC; stroke-width: .95; stroke-linecap: round; opacity: 0; }
+.espresso-figure[data-vapor="true"] .espresso-vapor { animation: espresso-vapor-rise 2s ease-in-out 2; }
+.espresso-figure .iso-line[data-flow] { animation: none; }
+.espresso-figure[data-flowing="true"] .iso-line[data-flow] { animation: iso-flow 1600ms linear infinite; }
+@keyframes espresso-vapor-rise { 0% { opacity: 0; transform: translateY(4px); } 25% { opacity: .38; } 100% { opacity: 0; transform: translateY(-8px); } }
+.espresso-gauge-body { fill: #252C26; stroke: #D9D6CB; stroke-width: 1.25; }
+.espresso-gauge-face { fill: #111613; stroke: #818A7E; stroke-width: .75; }
+.espresso-gauge-needle { fill: none; stroke: #D58B5D; stroke-width: 1.5; stroke-linecap: round; }
+.espresso-gauge-hub { fill: #E1DCCF; }
+.espresso-control { fill: #242A24; stroke: #B8B9AC; stroke-width: 1.1; }
+.espresso-control-inner { fill: #4E594E; stroke: #7B8576; stroke-width: .5; }
+.espresso-control-hub { fill: #D9D5C7; }
+.espresso-pilot { fill: #6D7B69; stroke: #A4AD9B; stroke-width: .8; transition: fill .3s ease; }
+.espresso-figure[data-brewing="true"] .espresso-pilot { fill: #D58B5D; }
+.espresso-wand-shadow { fill: none; stroke: #151A16; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.espresso-wand { fill: none; stroke: #C4C7BB; stroke-width: 3.9; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 700px) {
+  .espresso-plate { padding: 12px 12px 9px; }
+  .espresso-art { margin-right: -8px; margin-left: -8px; }
+  .espresso-figure figcaption { font-size: 10px; }
+  .espresso-plate-top { font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .espresso-figure *, .espresso-figure *::before { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .espresso-figure .espresso-droplet, .espresso-figure .espresso-vapor { display: none; }
+  .espresso-figure[data-flowing="true"] .iso-line[data-flow] { animation: none; }
+}

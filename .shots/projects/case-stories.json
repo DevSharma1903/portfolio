@@ -1,0 +1,20 @@
+[
+  {
+    "project": "Mobilis",
+    "selected": true,
+    "detailPresent": true,
+    "screenshot": "i-mobilis.png"
+  },
+  {
+    "project": "Zukunft AI",
+    "selected": true,
+    "detailPresent": true,
+    "screenshot": "i-zukunft.png"
+  },
+  {
+    "project": "College Management",
+    "selected": true,
+    "detailPresent": true,
+    "screenshot": "i-college.png"
+  }
+]
